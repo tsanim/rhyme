@@ -56,12 +56,19 @@ export default function Dashboard(props: any) {
     )
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     headerText: {
         padding: 20,
+        paddingBottom: 0,
         textAlign: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
         margin: 25,
+        marginBottom: "30%",
         fontSize: 40,
-        color: '#666'
+        color: '#666',
+        borderBottomWidth: 1,
+        borderBottomColor: "#666",
+        width: "50%"
     }
 });
