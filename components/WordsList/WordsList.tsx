@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SectionList, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, SectionList, SafeAreaView } from 'react-native';
 import Word from '../../models/Word/Word';
 import generalStyles from '../../styles';
 
