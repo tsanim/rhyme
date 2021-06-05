@@ -1,9 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, SectionList } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, SectionList, SafeAreaView } from 'react-native';
 import Word from '../../models/Word/Word';
 import generalStyles from '../../styles';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export interface WordsListProps {
     words: Word[],
@@ -22,19 +20,19 @@ export default function WordsList({ words }: WordsListProps) {
     })
 
     return (
-        <View>
-                {
-                    words.length > 0 ?
-                        <SectionList
-                            sections={sections}
-                            renderItem={({ item }: any) => <Text style={styles.item}>{item}</Text>}
-                            renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-                            keyExtractor={(item, index) => index.toString()}
-                        />
-                        : <Text style={generalStyles.label}>Няма римички. Потърси!</Text>
-                }
+        <SafeAreaView style={{ flex: 1 }}>
+            {
+                words.length > 0 ?
+                    <SectionList
+                        sections={sections}
+                        renderItem={({ item }: any) => <Text style={styles.item}>{item}</Text>}
+                        renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
+                    : <Text style={generalStyles.label}>Няма римички. Потърси!</Text>
+            }
 
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -50,7 +48,6 @@ const styles = StyleSheet.create({
     },
     item: {
         padding: 10,
-        fontSize: 18,
-        height: 44,
+        fontSize: 18
     },
 });
